@@ -47,7 +47,7 @@ you have to define the following parameters
 ### register the simpleHTTPServer Docker container
 
 `
-ansible-playbook -i hosts ./playbook1.yaml -e application=hello -e port=8080 -e urlprefix=spielwiese.local/ 
+ansible-playbook -i hosts ./playbook1.yaml -e application=hello -e port=8080 -e urlprefix=www.spielwie.se/ 
 `
 
 ### register a application with health check
