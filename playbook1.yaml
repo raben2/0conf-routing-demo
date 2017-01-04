@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+  gather_facts: true
+  become: false
+  tasks:
+    - name: register service in consul
+      consul:
+         host: localhost
+         service_address: "{{ ansible_lo.ipv4.address }}"
+         service_name: "{{ application }}"
+         service_port: "{{ port }}"
+         interval: "10s"
+         state: present
+         http: "http://{{ ansible_lo.ipv4.address }}:{{ port }}/"
+         tags: 
+           - "{{ application }}"
+           - "urlprefix-{{ urlprefix }}"

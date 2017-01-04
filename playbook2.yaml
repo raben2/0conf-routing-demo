@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+  gather_facts: true
+  become: false
+  tasks:
+    - name: register service with healthcheck in consul
+      consul:
+         host: localhost
+         service_address: "localhost"
+         service_name: "{{ application }}"
+         service_port: "{{ port }}"
+         interval: "10s"
+         state: present
+         http: "http://localhost:{{ admin_port }}/{{ healthcheck }}"
+         tags: 
+           - "{{ application }}"
+           - "urlprefix-{{ urlprefix }}"
