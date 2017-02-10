@@ -1,3 +1,11 @@
+after_script:
+  - docker-compose kill
+  - docker-compose rm -f
+
+stages:
+  - build
+  - test
+
 job1: 
   stage: build
   script: 
