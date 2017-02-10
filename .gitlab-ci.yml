@@ -1,7 +1,3 @@
-after_script:
-  - docker-compose kill
-  - docker-compose rm -f
-
 stages:
   - build
   - test
@@ -24,3 +20,7 @@ job3:
     - curl -H "HOST:www.spielwie.se/" http://ansiblehost
   tags: 
     - local
+
+after_script:
+  - docker-compose kill
+  - docker-compose rm -f
