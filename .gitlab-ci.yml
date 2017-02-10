@@ -17,6 +17,6 @@ job2:
 job3:
   stage: test
   script:
-    - curl -H "HOST:www.spielwie.se/" http://localhost
+    - curl -H "HOST: http://www.spielwie.se/" http://localhost/
   tags: 
-    - local
+    - local 
