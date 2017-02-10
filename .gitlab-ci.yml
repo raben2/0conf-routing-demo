@@ -1,0 +1,6 @@
+job1: 
+  stage: build
+  script: 
+    - docker-compose up -d
+  tags: 
+    - shell
