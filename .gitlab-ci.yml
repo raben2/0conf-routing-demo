@@ -11,16 +11,16 @@ job1:
   script: 
     - docker-compose up -d
   tags: 
-    - ansible
+    - local
 job2:
   stage: build
   script:
     - ansible-playbook -i hosts ./playbook1.yaml -e application=hello -e port=8080 -e urlprefix=www.spielwie.se/ 
   tags: 
-    - ansible
+    - local
 job3:
   stage: test
   script:
     - curl -H "HOST:www.spielwie.se/" http://ansiblehost
   tags: 
-    - ansible
+    - local
