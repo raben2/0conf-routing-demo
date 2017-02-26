@@ -2,7 +2,7 @@ version: '2'
 services: 
     go: 
         build: docker/golang
-        image: go:1.7.4
+        image: go:1.8
     consul:
         image: consul
         container_name: consul
@@ -11,7 +11,7 @@ services:
         network_mode: 'host'
     fabio:
         build: ./docker/fabio
-        image: fabio:1.3.7
+        image: fabio:1.3.8
         container_name: fabio
         ports: 
            - "80:80"

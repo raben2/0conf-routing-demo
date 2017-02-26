@@ -1,4 +1,4 @@
-FROM go:1.7.4
+FROM go:1.8
 MAINTAINER Georg Rabenstein @raben2
 
 RUN apk add --no-cache git
